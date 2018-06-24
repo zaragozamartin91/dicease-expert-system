@@ -28,6 +28,6 @@ hs_err_pid*
 .vscode/
 build/
 .idea/
-dicease-expert-system.iml
+disease-expert-system.iml
 out/
 

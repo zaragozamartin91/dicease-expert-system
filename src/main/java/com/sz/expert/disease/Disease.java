@@ -1,9 +1,9 @@
-package com.sz.expert.dicease;
+package com.sz.expert.disease;
 
 /**
- * Dicease
+ * Disease
  */
-public class Dicease {
+public class Disease {
     // SINTOMAS
     private boolean highFever;
     private boolean violetLimbs;
@@ -17,6 +17,9 @@ public class Dicease {
 
     // DIAGNOSTICO
     private boolean tuberculosis;
+    private boolean pneumothorax;
+    private boolean pneumonia;
+    private boolean flu;
 
     public boolean isHighFever() {
         return highFever;
@@ -96,5 +99,29 @@ public class Dicease {
 
     public void setHighOxygen(boolean highOxygen) {
         this.highOxygen = highOxygen;
+    }
+
+    public boolean isPneumothorax() {
+        return pneumothorax;
+    }
+
+    public void setPneumothorax(boolean pneumothorax) {
+        this.pneumothorax = pneumothorax;
+    }
+
+    public boolean isPneumonia() {
+        return pneumonia;
+    }
+
+    public void setPneumonia(boolean pneumonia) {
+        this.pneumonia = pneumonia;
+    }
+
+    public boolean isFlu() {
+        return flu;
+    }
+
+    public void setFlu(boolean flu) {
+        this.flu = flu;
     }
 }

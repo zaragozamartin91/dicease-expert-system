@@ -1,10 +1,10 @@
-package com.sz.expert.dicease
+package com.sz.expert.disease
 
-import com.sz.expert.dicease.Dicease
+import com.sz.expert.disease.Disease
 
 rule "Tuberculosis"
 	when 
-		dicease: Dicease(
+		disease: Disease(
 		    highFever
 		    && violetLimbs
 		    && cough
@@ -14,6 +14,6 @@ rule "Tuberculosis"
             && highWhiteBloodCells
 		);
 	then
-		dicease.setTuberculosis(true);
+		disease.setTuberculosis(true);
 	end
 

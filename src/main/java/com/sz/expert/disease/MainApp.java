@@ -1,4 +1,4 @@
-package com.sz.expert.dicease;
+package com.sz.expert.disease;
 
 
 import org.drools.compiler.compiler.DroolsParserException;
@@ -24,7 +24,7 @@ public class MainApp {
         PackageBuilder packageBuilder = new PackageBuilder();
 
         // InputStream resourceAsStream = getClass()
-        //     .getResourceAsStream("/com/sz/expert/dicease/Rules.drl");
+        //     .getResourceAsStream("/com/sz/expert/disease/Rules.drl");
 
         InputStream resourceAsStream = getClass()
             .getResourceAsStream("/com/rule/Rules.drl");
@@ -37,19 +37,19 @@ public class MainApp {
 
         WorkingMemory workingMemory = ruleBase.newStatefulSession();
 
-        Dicease dicease = new Dicease();
-        dicease.setHighFever(true);
-        dicease.setVioletLimbs(true);
-        dicease.setCough(true);
-        dicease.setBronchospasm(true);
-        dicease.setXray("dark");
-        dicease.setWhistle(true);
-        dicease.setHighWhiteBloodCells(true);
+        Disease disease = new Disease();
+        disease.setHighFever(true);
+        disease.setVioletLimbs(true);
+        disease.setCough(true);
+        disease.setBronchospasm(true);
+        disease.setXray("dark");
+        disease.setWhistle(true);
+        disease.setHighWhiteBloodCells(true);
 
-        workingMemory.insert(dicease);
+        workingMemory.insert(disease);
         workingMemory.fireAllRules();
 
-        System.out.println("Tiene tuberculosis: " + dicease.isTuberculosis());
+        System.out.println("Tiene tuberculosis: " + disease.isTuberculosis());
     }
 
 }

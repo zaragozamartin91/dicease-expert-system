@@ -1,4 +1,4 @@
-package com.sz.expert.dicease;
+package com.sz.expert.disease;
 
 public class SymptomReader {
 

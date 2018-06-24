@@ -1,4 +1,4 @@
-# dicease-expert-system
+# disease-expert-system
 Sistema experto para la prediccion de afecciones pulmonares
 
 ## Compilar
