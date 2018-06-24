@@ -1,15 +1,16 @@
 package com.sz.expert.dicease;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 
 import org.drools.compiler.compiler.DroolsParserException;
 import org.drools.compiler.compiler.PackageBuilder;
 import org.drools.core.RuleBase;
 import org.drools.core.RuleBaseFactory;
 import org.drools.core.WorkingMemory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 public class MainApp {
 
@@ -36,13 +37,19 @@ public class MainApp {
 
         WorkingMemory workingMemory = ruleBase.newStatefulSession();
 
-        Product product = new Product();
-        product.setType("gold");
+        Dicease dicease = new Dicease();
+        dicease.setHighFever(true);
+        dicease.setVioletLimbs(true);
+        dicease.setCough(true);
+        dicease.setBronchospasm(true);
+        dicease.setXray("dark");
+        dicease.setWhistle(true);
+        dicease.setHighWhiteBloodCells(true);
 
-        workingMemory.insert(product);
+        workingMemory.insert(dicease);
         workingMemory.fireAllRules();
 
-        System.out.println("The discount for the product " + product.getType() + " is " + product.getDiscount());
+        System.out.println("Tiene tuberculosis: " + dicease.isTuberculosis());
     }
 
 }

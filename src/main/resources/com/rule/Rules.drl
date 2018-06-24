@@ -1,17 +1,19 @@
 package com.sz.expert.dicease
 
-import com.sz.expert.dicease.Product
+import com.sz.expert.dicease.Dicease
 
-rule "Offer for Diamond"
+rule "Tuberculosis"
 	when 
-		productObject: Product(type=="diamond")
+		dicease: Dicease(
+		    highFever
+		    && violetLimbs
+		    && cough
+		    && bronchospasm
+            && xray == "dark"
+            && whistle
+            && highWhiteBloodCells
+		);
 	then
-		productObject.setDiscount(15);
-	end
-rule "Offer for Gold"
-	when 
-		productObject: Product(type=="gold")
-	then
-		productObject.setDiscount(25);
+		dicease.setTuberculosis(true);
 	end
 
