@@ -27,7 +27,7 @@ public class MainApp {
         //     .getResourceAsStream("/com/sz/expert/disease/Rules.drl");
 
         InputStream resourceAsStream = getClass()
-            .getResourceAsStream("/com/rule/Rules.drl");
+                .getResourceAsStream("/com/rule/Rules.drl");
 
         Reader reader = new InputStreamReader(resourceAsStream);
         packageBuilder.addPackageFromDrl(reader);
@@ -38,18 +38,20 @@ public class MainApp {
         WorkingMemory workingMemory = ruleBase.newStatefulSession();
 
         Disease disease = new Disease();
-        disease.setHighFever(true);
-        disease.setVioletLimbs(true);
-        disease.setCough(true);
-        disease.setBronchospasm(true);
-        disease.setXray("dark");
-        disease.setWhistle(true);
-        disease.setHighWhiteBloodCells(true);
+        disease.setHighFever(SymptomReader.read().highFever());
+        disease.setVioletLimbs(SymptomReader.read().violetLimbs());
+        disease.setNeckPain(SymptomReader.read().neckPain());
+        disease.setCough(SymptomReader.read().cough());
+        disease.setBronchospasm(SymptomReader.read().bronchospasm());
+        disease.setHighOxygen(SymptomReader.read().highOxygen());
+        disease.setXray(SymptomReader.read().xray());
+        disease.setWhistle(SymptomReader.read().whistle());
+        disease.setHighWhiteBloodCells(SymptomReader.read().highWhiteBloodCells());
 
         workingMemory.insert(disease);
         workingMemory.fireAllRules();
 
-        System.out.println("Tiene tuberculosis: " + disease.isTuberculosis());
+        System.out.println(DiagnosisFormatter.format().diagnosis(disease));
     }
 
 }

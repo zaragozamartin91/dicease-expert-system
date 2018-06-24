@@ -77,14 +77,6 @@ public class Disease {
         this.highWhiteBloodCells = highWhiteBloodCells;
     }
 
-    public boolean isTuberculosis() {
-        return tuberculosis;
-    }
-
-    public void setTuberculosis(boolean tuberculosis) {
-        this.tuberculosis = tuberculosis;
-    }
-
     public boolean isNeckPain() {
         return neckPain;
     }
@@ -99,6 +91,14 @@ public class Disease {
 
     public void setHighOxygen(boolean highOxygen) {
         this.highOxygen = highOxygen;
+    }
+
+    public boolean isTuberculosis() {
+        return tuberculosis;
+    }
+
+    public void setTuberculosis(boolean tuberculosis) {
+        this.tuberculosis = tuberculosis;
     }
 
     public boolean isPneumothorax() {
@@ -123,5 +123,12 @@ public class Disease {
 
     public void setFlu(boolean flu) {
         this.flu = flu;
+    }
+
+    public boolean anyDisease() {
+        return isPneumonia()
+                || isTuberculosis()
+                || isPneumothorax()
+                || isTuberculosis();
     }
 }

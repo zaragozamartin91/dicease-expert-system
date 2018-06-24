@@ -5,5 +5,8 @@ Sistema experto para la prediccion de afecciones pulmonares
 correr __gradlew build__ (__./gradlew build__ en linux)
 
 ## Probar
-correr __gradlew run__ (__./gradlew run__ en linux)
+En __build/distributions__ se genera el componente __disease-expert-system.zip__.
+
+Extraer el zip y correr bin/disease-expert-system.
+
 

@@ -17,3 +17,39 @@ rule "Tuberculosis"
 		disease.setTuberculosis(true);
 	end
 
+rule "Pneumothorax"
+	when
+		disease: Disease(
+		    neckPain
+		    && cough
+		    && bronchospasm
+            && xray == "dark"
+            && whistle
+		);
+	then
+		disease.setPneumothorax(true);
+	end
+
+rule "Pneumonia"
+	when
+		disease: Disease(
+		    highFever
+		    && neckPain
+		    && xray == "white"
+            && highWhiteBloodCells
+		);
+	then
+		disease.setPneumonia(true);
+	end
+
+rule "Flu"
+	when
+		disease: Disease(
+		    highFever
+		    && cough
+            && xray == "clear"
+            && highOxygen
+		);
+	then
+		disease.setFlu(true);
+	end
